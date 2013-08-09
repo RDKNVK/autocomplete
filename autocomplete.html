@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>autocomplete</title>
+<link rel="stylesheet" type="text/css" href="autocomplete.css">
+</head>
+<body>
+	<p>
+		The input field below connects to database on every keystroke and fetches first 15 words that start with, contain, or sound similar to the sequence of written letters. Words are then shown in the div below and can be selected by clicking. Database used here as an example contains 1000 most used english words.
+	</p>
+
+	<div id="autocomplete">
+		<input id="in" list="words" type="text" autocomplete="off" autofocus >
+		<ul>
+			<li><input type="radio" name="search-by" value="first" checked>first letters</li>
+			<li><input type="radio" name="search-by" value="any">anywhere inside</li>
+			<li><input type="radio" name="search-by" value="soundex">soundex</li>
+		</ul>
+		<div id="results"></div>
+	</div>
+	
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="autocomplete.js"></script>
+
+</body>
+</html>
