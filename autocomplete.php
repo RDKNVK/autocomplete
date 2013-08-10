@@ -2,7 +2,7 @@
 
 //  
 //  Autocomplete form in PHP, MySQL and jQuery's AJAX.
-//  
+//  http://github.com/RDKNVK/autocomplete
 //  --------------------------------------------------
 //  use with for example:
 //  
@@ -15,12 +15,10 @@
 require 'db_obj.php';
 
 if(isset($_GET['letters'])) {
-
 	$letters = $_GET['letters'];
 	$like = '';
 	$s = false;
 	if (isset($_GET['searchby'])){
-
 		switch ($_GET['searchby']) {
 			case 'first':
 				$like = "$letters%";
@@ -31,7 +29,6 @@ if(isset($_GET['letters'])) {
 			case 'soundex':
 				$s = true;
 				break;
-			
 			default:
 				break;
 		}
@@ -51,8 +48,6 @@ if(isset($_GET['letters'])) {
 
 	// change these
 	$db = new Database('your_db_host', 'your_db_login', 'your_db_password', 'your_db_name');
-
-
 	$db->query($query_string);
 
 	echo json_encode($db->col(0));	
